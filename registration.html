@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="form.css">
+  <title></title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="heading">
+      <h3>FIND MY RIDE</h3>
+    </div>
+    <div class="form">
+      <form id="form1">
+        <fieldset id="field1">
+          <h3>Let us begin!</h3>
+          <div class="btn-box">
+            <button type="button" id="start">Start Here</button>
+          </div>
+          </fieldset>
+        <fieldset id="field2">
+          <h3>Where are you travelling?</h3>
+          <div class="btn-box">
+            <button type="button" id="where1">From University</button>
+            <button type="button" id="where2">To University</button>
+          </div>
+        </fieldset>
+        <fieldset id="field3">
+          <h3>Enter your current location</h3>
+          <input type="text" placeholder="Location">
+          <div class="btn-box">
+            <button type="button" onclick="next()">Next</button>
+          </div>
+        </fieldset>
+        <fieldset id="field4">
+          <h3>Enter your desired location</h3>
+          <input type="text" placeholder="Location">
+          <div class="btn-box">
+            <button type="button" onclick="next()">Next</button>
+          </div>
+        </fieldset>
+        <fieldset id="field5">
+          <h3>Are you offering a ride?</h3>
+          <div class="btn-box">
+            <button type="button" id="yes">Yes</button>
+            <button type="button" id="no">No</button>
+          </div>
+        </fieldset>
+        <fieldset id="field6">
+          <h3>How many passengers can you accomodate?</h3>
+          <div class="slider">
+            <input type="range" min="1" max="5" value="1" class="rangeslider" id="slider">
+          </div>
+          <label id="label" class="label-right">5</label>
+          <div class="btn-box">
+            <button type="button" onclick="next1()">Next</button>
+          </div>
+        </fieldset>
+        <fieldset id="field7">
+          <h3>How many passengers are there with you?</h3>
+          <div class="slider">
+            <input type="range" min="1" max="5" value="1" class="rangeslider" id="slider">
+          </div>
+          <label id="label" class="label-right">5</label>
+          <div class="btn-box">
+            <button type="button">Search rides</button>
+          </div>
+        </fieldset>
+        <fieldset id="field8">
+          <h3>Enter vehicle name</h3>
+          <input type="text" placeholder="car name">
+          <div class="btn-box">
+            <button type="button" onclick="next2()">Next</button>
+          </div>
+        </fieldset>
+        <fieldset id="field9">
+          <h3>Enter vehicle number</h3>
+          <input type="text" placeholder="vehicle number">
+          <div class="btn-box">
+            <button type="button">Search rides</button>
+          </div>
+        </fieldset>
+      </div>
+    </form>
+    </div>
+    <script>
+      var start = document.getElementById('start')
+      var wherefrom = document.getElementById('where1')
+      var whereto = document.getElementById('where2')
+      var yes = document.getElementById('yes')
+      var no = document.getElementById('no')
+
+      start.onclick = function()
+      {
+        field1.style.left = "-450px";
+        field2.style.left = "5px";
+      }
+      wherefrom.onclick = function()
+      {
+        field2.style.left = "-450px";
+        field4.style.left = "5px";
+      }
+      whereto.onclick = function()
+      {
+        field2.style.left = "-450px";
+        field3.style.left = "5px";
+      }
+      function next()
+      {
+        field3.style.left = "-450px";
+        field4.style.left = "-450px";
+        field5.style.left = "5px";
+      }
+      yes.onclick = function()
+      {
+        field5.style.left = "-450px";
+        field6.style.left = "5px";
+      }
+      no.onclick = function()
+      {
+        field5.style.left = "-450px";
+        field6.style.left = "-450px";
+        field7.style.left = "5px";
+      }
+      function next1()
+      {
+        field6.style.left = "-450px";
+        field7.style.left = "-450px";
+        field8.style.left = "5px";
+      }
+      function next2()
+      {
+        // field7.style.left = "-450px";
+        field8.style.left = "-450px";
+        field9.style.left = "5px";
+      }
+      var slider = document.querySelector('#slider')
+      var label = document.querySelector('#label')
+      label.innerHTML = slider.value;
+      slider.oninput = function()
+      {
+        label.innerHTML = slider.value;
+      }
+    </script>
+  </body>
+</html>

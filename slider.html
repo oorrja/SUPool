@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style media="screen">
+    body{
+      padding: 100px;
+      background: black;
+      color: white;
+    }
+    .slider
+    {
+      position: relative;
+    }
+    .rangeslider
+    {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 30%;
+      height: 20px;
+      border-radius: 20px;
+      outline: none;
+    }
+    .rangeslider::-webkit-slider-thumb
+    {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 35px;
+      height: 35px;
+      background: radial-gradient(#dfa3ff, #b429ff);
+      border-radius: 50%;
+    }
+    .rangeslider::-webkit-slider-thumb:hover
+    {
+      box-shadow: 0 0 0 10px rgba(255,255,255,0.2);
+    }
+    .rangeslider::-webkit-slider-thumb:active
+    {
+      box-shadow: 0 0 0 10px rgba(255,255,255,0.5);
+    }
+    label
+    {
+      font-size: 40px;
+      color: white;
+      border-radius: 20px;
+    }
+    .label-right
+    {
+      font-size: 40px;
+      color: white;
+      position: relative;
+      left: 30%;
+    }
+  </style>
+  <body>
+    <div class="slider">
+      <input type="range" min="1" max="5" value="1" class="rangeslider" id="slider">
+    </div>
+    <label id="label" class="label-right">5</label>
+    <script>
+      var slider = document.querySelector('#slider')
+      var label = document.querySelector('#label')
+      label.innerHTML = slider.value;
+      slider.oninput = function()
+      {
+        label.innerHTML = slider.value;
+      }
+    </script>
+  </body>
+</html>
